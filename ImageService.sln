@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageService", "ImageService\ImageService.csproj", "{0EF53AF2-F8C3-46C2-86B0-901BB346126C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageService.Tests", "ImageService.Tests\ImageService.Tests.csproj", "{CD12B6EF-7BED-47D1-A288-3B980739CCDE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0EF53AF2-F8C3-46C2-86B0-901BB346126C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EF53AF2-F8C3-46C2-86B0-901BB346126C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EF53AF2-F8C3-46C2-86B0-901BB346126C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EF53AF2-F8C3-46C2-86B0-901BB346126C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD12B6EF-7BED-47D1-A288-3B980739CCDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD12B6EF-7BED-47D1-A288-3B980739CCDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD12B6EF-7BED-47D1-A288-3B980739CCDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD12B6EF-7BED-47D1-A288-3B980739CCDE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
