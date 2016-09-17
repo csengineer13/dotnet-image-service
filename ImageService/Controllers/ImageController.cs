@@ -6,6 +6,7 @@ using ImageService.Models;
 
 namespace ImageService.Controllers
 {
+    [RoutePrefix("Api/Image")]
     public class ImageController : ApiController
     {
         ImageModel[] imageModels = new ImageModel[]
@@ -14,12 +15,13 @@ namespace ImageService.Controllers
             new ImageModel { Id = Guid.NewGuid(), Name = "Yo-yo"},
             new ImageModel { Id = Guid.NewGuid(), Name = "Hammer"}
  };
-
+        [Route("List")]
         public IEnumerable<ImageModel> GetAllImages()
         {
             return imageModels;
         }
 
+        [Route("ByName")]
         public IHttpActionResult GetImage(string name)
         {
             var image = imageModels.FirstOrDefault((p) => p.Name == name);
