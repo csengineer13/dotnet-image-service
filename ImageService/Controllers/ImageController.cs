@@ -1,35 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
 using ImageService.Models;
+using ImageService.Utilities;
 
 namespace ImageService.Controllers
 {
     [RoutePrefix("Api/Image")]
     public class ImageController : ApiController
     {
-        ImageModel[] imageModels = new ImageModel[]
- {
-            new ImageModel { Id = Guid.NewGuid(), Name = "Tomato Soup"},
-            new ImageModel { Id = Guid.NewGuid(), Name = "Yo-yo"},
-            new ImageModel { Id = Guid.NewGuid(), Name = "Hammer"}
- };
-        [Route("List")]
-        public IEnumerable<ImageModel> GetAllImages()
+        [Route("GetImageByUrl/")]
+        public IHttpActionResult GetImageByUrl(string imageUrl)
         {
-            return imageModels;
+            var image = ImageHelpers.DownloadRemoteImageFile(imageUrl);
+            return ImageHelpers.ReturnImage(image, MediaType.JPEG);
         }
 
-        [Route("ByName")]
-        public IHttpActionResult GetImage(string name)
-        {
-            var image = imageModels.FirstOrDefault((p) => p.Name == name);
-            if (image == null)
-            {
-                return NotFound();
-            }
-            return Ok(image);
-        }
+
+
+        //[Route("GetImageBy")]
+        //public IHttpActionResult GetImageB()
+        //{
+        //    var result = new HttpResponseMessage(HttpStatusCode.OK);
+        //    //String filePath = HostingEnvironment.MapPath("~/Images/HT.jpg");
+        //    //FileStream fileStream = new FileStream(filePath, FileMode.Open);
+        //    //Image image = Image.FromStream(fileStream);
+        //    //MemoryStream memoryStream = new MemoryStream();
+        //    //image.Save(memoryStream, ImageFormat.Jpeg);
+        //    result.Content = new ByteArrayContent(memoryStream.ToArray());
+        //    result.Content.Headers.ContentType = new MediaTypeHeaderValue("image/jpeg");
+
+        //    return (IHttpActionResult)result;
+        //}
     }
 }
