@@ -1,20 +1,23 @@
 ﻿using System.Web.Http;
 using ImageService.Models;
-using ImageService.Utilities;
 
 namespace ImageService.Controllers
 {
     [RoutePrefix("Api/Image")]
-    public class ImageController : ApiController
+    public class ImageController : BaseApiController
     {
         [Route("GetImageByUrl/")]
         public IHttpActionResult GetImageByUrl(string imageUrl)
         {
-            var image = ImageHelpers.DownloadRemoteImageFile(imageUrl);
-            return ImageHelpers.ReturnImage(image, MediaType.JPEG);
+            var image = new ImageModel(imageUrl);
+            return ReturnImage(image, MediaType.JPEG);
         }
 
+        // Hosted Locally
 
+        // Hosted with Amazon S3
+
+        // On User's computer
 
         //[Route("GetImageBy")]
         //public IHttpActionResult GetImageB()
